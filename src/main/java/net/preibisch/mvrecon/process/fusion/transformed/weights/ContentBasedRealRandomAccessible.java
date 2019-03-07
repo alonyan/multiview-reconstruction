@@ -93,25 +93,25 @@ public class ContentBasedRealRandomAccessible< T extends RealType< T > > impleme
 		final Img< FloatType > conv = f.create( input, new FloatType() );
 		
 		// compute I*sigma1
-		FFTConvolution< FloatType > fftConv = new FFTConvolution<FloatType>( input, createGaussianKernel( sigma1 ), conv, imgFactory );
-		fftConv.convolve();
+		//FFTConvolution< FloatType > fftConv = new FFTConvolution<FloatType>( input, createGaussianKernel( sigma1 ), conv, imgFactory );
+		//fftConv.convolve();
 		
 		// compute ( I - I*sigma1 )^2
-		final Cursor< FloatType > c = conv.cursor();
-		final RandomAccess< FloatType > r = input.randomAccess();
+		//final Cursor< FloatType > c = conv.cursor();
+		//final RandomAccess< FloatType > r = input.randomAccess();
 		
-		while ( c.hasNext() )
-		{
-			c.fwd();
-			r.setPosition( c );
+		//while ( c.hasNext() )
+		//{
+		//	c.fwd();
+		//	r.setPosition( c );
 			
-			final float diff = c.get().get() - r.get().get();
-			c.get().set( diff * diff );
-		}
+		//	final float diff = c.get().get() - r.get().get();
+		//	c.get().set( diff * diff );
+		//}
 		
 		// compute ( ( I - I*sigma1 )^2 ) * sigma2
-		fftConv = new FFTConvolution<FloatType>( conv, createGaussianKernel( sigma2 ), imgFactory );
-		fftConv.convolve();
+		//fftConv = new FFTConvolution<FloatType>( conv, createGaussianKernel( sigma2 ), imgFactory );
+		//fftConv.convolve();
 
 		// normalize to [0...1]
 		FusionTools.normalizeImage( conv );
