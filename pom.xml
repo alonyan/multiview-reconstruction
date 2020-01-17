@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>org.scijava</groupId>
 		<artifactId>pom-scijava</artifactId>
-		<version>26.0.0</version>
+		<version>27.0.1</version>
 		<relativePath />
 	</parent>
 
 	<groupId>net.preibisch</groupId>
 	<artifactId>multiview-reconstruction</artifactId>
-	<version>0.3.6-SNAPSHOT</version>
+	<version>0.4.2-SNAPSHOT</version>
 
 	<name>Multiview Reconstruction</name>
 	<description>Software for the reconstruction of multi-view microscopic acquisitions
